@@ -473,7 +473,7 @@ const rocketList = [
 
 const Rockets = () => (
   <div className="rockets-page">
-    <RocketList />
+    <RocketList rocketList={rocketList} />
   </div>
 );
 
