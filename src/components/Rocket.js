@@ -17,14 +17,34 @@ const Rocket = ({
     dispatch(cancelReservation(rocketId));
   };
 
-    <div className="rocket-info">
-      <h2>{name}</h2>
-      <p>{description}</p>
-      <button type="button" className="reserve-button">Reserve Rocket</button>
-    </div>
+  return (
+    <div className="rocket">
+      <img src={imageLink} alt={name} className="rocket-image" />
 
-  </div>
-);
+      <div className="rocket-info">
+        <h2>{name}</h2>
+        {reserved ? (
+          <>
+            <p>
+              <small className="reserved-tag">reserved</small>
+              {description}
+            </p>
+            <button type="button" className="cancel-button" onClick={() => cancel(id)}>Cancel Reservation</button>
+          </>
+        )
+          : (
+            <>
+              <p>
+                {description}
+              </p>
+              <button type="button" className="reserve-button" onClick={() => reserve(id)}>Reserve Rocket</button>
+            </>
+          )}
+      </div>
+
+    </div>
+  );
+};
 
 Rocket.propTypes = {
   imageLink: PropTypes.string.isRequired,
