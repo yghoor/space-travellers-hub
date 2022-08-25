@@ -1,7 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-const ReservedRockets = () => (
-  <ul className="reserved-rockets" />
-);
+const ReservedRockets = () => {
+  const rocketList = useSelector((state) => state.rocketsReducer);
+
+  return (
+    <ul className="reserved-rockets">
+      {rocketList.map((rocket) => {
+        if (rocket.reserved) {
+          return (
+            <li>{rocket.rocket_name}</li>
+          );
+        }
+        return null;
+      })}
+    </ul>
+  );
+};
 
 export default ReservedRockets;
