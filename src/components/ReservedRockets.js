@@ -9,7 +9,7 @@ const ReservedRockets = () => {
       {rocketList.map((rocket) => {
         if (rocket.reserved) {
           return (
-            <li>{rocket.rocket_name}</li>
+            <li key={rocket.id}>{rocket.rocket_name}</li>
           );
         }
         return null;
