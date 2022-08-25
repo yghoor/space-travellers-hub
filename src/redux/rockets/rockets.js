@@ -1,4 +1,7 @@
 const RETRIEVE_ROCKETS = 'react-redux-book-store/books/RETRIEVE_ROCKETS';
+const RESERVE_ROCKET = 'react-redux-book-store/books/RESERVE_ROCKET';
+const CANCEL_RESERVATION = 'react-redux-book-store/books/CANCEL_RESERVATION';
+
 const initialState = [];
 
 const reducer = (state = initialState, action) => {
@@ -23,3 +26,13 @@ export const retrieveRockets = () => async (dispatch) => {
     payload: rockets,
   });
 };
+
+export const reserveRocket = (payload) => ({
+  type: RESERVE_ROCKET,
+  payload,
+});
+
+export const cancelReservation = (payload) => ({
+  type: CANCEL_RESERVATION,
+  payload,
+});
