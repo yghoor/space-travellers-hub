@@ -23,6 +23,8 @@ const RocketList = () => {
             imageLink={rocket.flickr_images[0]}
             name={rocket.rocket_name}
             description={rocket.description}
+            reserved={rocket.reserved}
+            id={rocket.id}
           />
         ))}
       </ul>
