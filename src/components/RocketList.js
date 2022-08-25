@@ -16,11 +16,7 @@ const RocketList = ({ rocketList }) => (
       ))}
     </ul>
   </div>
-);
-
-RocketList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  rocketList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  );
 };
 
 export default RocketList;
