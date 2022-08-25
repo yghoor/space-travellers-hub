@@ -11,7 +11,6 @@ import MyProfile from './pages/MyProfile';
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('dispatching...');
     dispatch(retrieveRockets());
   }, []);
 
