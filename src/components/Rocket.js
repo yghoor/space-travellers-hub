@@ -1,9 +1,21 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-const Rocket = ({ imageLink, name, description }) => (
-  <div className="rocket">
-    <img src={imageLink} alt={name} className="rocket-image" />
+import { reserveRocket, cancelReservation } from '../redux/rockets/rockets';
+
+const Rocket = ({
+  id, imageLink, name, description, reserved,
+}) => {
+  const dispatch = useDispatch();
+
+  const reserve = (rocketId) => {
+    dispatch(reserveRocket(rocketId));
+  };
+
+  const cancel = (rocketId) => {
+    dispatch(cancelReservation(rocketId));
+  };
 
     <div className="rocket-info">
       <h2>{name}</h2>
