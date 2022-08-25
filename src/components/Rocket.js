@@ -18,6 +18,15 @@ Rocket.propTypes = {
   imageLink: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  reserved: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.number,
+  ]),
+  id: PropTypes.number.isRequired,
+};
+
+Rocket.defaultProps = {
+  reserved: undefined,
 };
 
 export default Rocket;
